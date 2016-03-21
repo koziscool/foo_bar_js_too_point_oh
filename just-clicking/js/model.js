@@ -22,7 +22,6 @@ JC.model = (function() {
   };
 
   var activateRandomSquare = function() {
-    console.log('im here')
     var indexes = [];
     for (var i = 0; i < _squares.length;i++ ){
       if( _squares[i] === 0 ) {

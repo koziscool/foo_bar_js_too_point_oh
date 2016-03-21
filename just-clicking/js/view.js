@@ -9,16 +9,26 @@ JC.view = (function( ) {
   var $_squares;
   var $_score;
 
-  var init = function( onClick ) {
+  var makeClickListeners = function( onClick ) {
+    $('#game').click('.square', function(e) {
+      var $square = $(e.target);
+      if ($square.hasClass('active')) {
+        $square.removeClass('active');
+        var index = parseInt($square.attr('data-id'));
+        onClick(index);
+      }
+    });
+  };
 
+  var init = function( onClick ) {
     $_squares = $('.square');
     $_score = $('#score');
 
     $_squares.each(function(index, element) {
       var $element = $(element);
       $element.attr('data-id', index);
-      onClick(index);
     });
+    makeClickListeners( onClick );
   };
 
   var updateSquares = function(dataSquares) {

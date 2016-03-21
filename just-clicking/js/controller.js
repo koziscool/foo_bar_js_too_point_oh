@@ -8,7 +8,7 @@ JC.controller = ( function( ) {
 
   var _handleClick = function( index ) {
     JC.model.processSquareClick( index );
-  }
+  };
 
   var gameLoop = function() {
     setInterval( function(){
@@ -18,11 +18,12 @@ JC.controller = ( function( ) {
       JC.view.updateScore(score);
       JC.view.updateSquares(squares);
     }, 1000);
-  }
+  };
 
-  var init = function($, _, JC ) {
+  var init = function() {
     // JC.model.init();
-    JC.view.init( _handleClick );
+
+    JC.view.init( _handleClick, $ );
     gameLoop();
   };
 
