@@ -4,7 +4,7 @@
 
 var JC = JC || {};
 
-JC.controller = ( function(  ) {
+JC.controller = ( function( ) {
 
   var _handleClick = function( index ) {
     JC.model.processSquareClick( index );
@@ -20,7 +20,7 @@ JC.controller = ( function(  ) {
     }, 1000);
   }
 
-  var init = function() {
+  var init = function($, _, JC ) {
     // JC.model.init();
     JC.view.init( _handleClick );
     gameLoop();

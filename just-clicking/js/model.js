@@ -22,6 +22,7 @@ JC.model = (function() {
   };
 
   var activateRandomSquare = function() {
+    console.log('im here')
     var indexes = [];
     for (var i = 0; i < _squares.length;i++ ){
       if( _squares[i] === 0 ) {
@@ -32,12 +33,15 @@ JC.model = (function() {
     if (indexes.length === 0) {
       return
     } else {
-      return _.shuffle(indexes)[0];
+      var randIndex = _.shuffle(indexes)[0];
+      _squares[randIndex] = 1;
+      return randIndex;
     }
   };
 
   var processSquareClick = function(index) {
     if( _squares[index] === 1) {
+      _squares[index] = 0;
       _score += 10;
     }
   };
