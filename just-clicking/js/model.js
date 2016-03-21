@@ -6,8 +6,8 @@ var JC = JC || {};
 
 JC.model = (function() {
 
-  _score = 0;
-  _squares = [0, 0, 0, 0, 0, 0, 0, 0, 0];
+  var _score = 0;
+  var _squares = [0, 0, 0, 0, 0, 0, 0, 0, 0];
 
   var getScore = function() {
     return _score;
@@ -24,7 +24,7 @@ JC.model = (function() {
   var activateRandomSquare = function() {
     var indexes = [];
     for (var i = 0; i < _squares.length;i++ ){
-      if( squares[i] === 0 ) {
+      if( _squares[i] === 0 ) {
         indexes.push(i);
       }
     }

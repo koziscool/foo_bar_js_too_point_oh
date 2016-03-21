@@ -6,10 +6,13 @@ var JC = JC || {};
 
 JC.view = (function( ) {
 
+  var $_squares;
+  var $_score;
+
   var init = function( onClick ) {
 
-    var $_squares = $('.square');
-    var $_score = $('#score');
+    $_squares = $('.square');
+    $_score = $('#score');
 
     $_squares.each(function(index, element) {
       var $element = $(element);
@@ -21,7 +24,7 @@ JC.view = (function( ) {
   var updateSquares = function(dataSquares) {
     for (var i = 0; i < dataSquares.length; i++) {
       var $square = $_squares.eq(i);
-      if (dataSquare[i] === 1) {
+      if (dataSquares[i] === 1) {
         $square.addClass('active');
       } else {
         $square.removeClass('active');
