@@ -4,7 +4,7 @@
 
 var JC = JC || {};
 
-JC.model = (function() {
+JC.model = (function( _ ) {
 
   var _score = 0;
   var _squares = [0, 0, 0, 0, 0, 0, 0, 0, 0];
@@ -16,9 +16,6 @@ JC.model = (function() {
   var getSquares = function() {
     var squaresCopy = _squares.slice();
     return squaresCopy;
-    // return squaresCopy.filter( function(elt){
-    //   return elt === 1;
-    // });
   };
 
   var activateRandomSquare = function() {
@@ -53,4 +50,4 @@ JC.model = (function() {
     processSquareClick: processSquareClick,
   };
 
-})();
+})( _ );

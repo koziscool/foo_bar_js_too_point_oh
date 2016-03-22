@@ -4,7 +4,7 @@
 
 var JC = JC || {};
 
-JC.view = (function( ) {
+JC.view = (function( $ ) {
 
   var $_squares;
   var $_score;
@@ -53,5 +53,5 @@ JC.view = (function( ) {
     updateScore: updateScore,
   };
 
-})();
+})( $ );
 

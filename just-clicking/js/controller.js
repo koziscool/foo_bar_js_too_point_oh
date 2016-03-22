@@ -2,16 +2,17 @@
 // Controller
 // ----------------------------------------
 
+// debugger;
 var JC = JC || {};
 
-JC.controller = ( function( ) {
+JC.controller = ( function( JC ) {
 
   var _handleClick = function( index ) {
     JC.model.processSquareClick( index );
   };
 
-  var gameLoop = function() {
-    setInterval( function(){
+  var _gameLoop = function() {
+    setInterval( function( ){
       JC.model.activateRandomSquare();
       var score = JC.model.getScore();
       var squares = JC.model.getSquares();
@@ -21,16 +22,15 @@ JC.controller = ( function( ) {
   };
 
   var init = function() {
-    // JC.model.init();
-
-    JC.view.init( _handleClick, $ );
-    gameLoop();
+    // debugger;
+    JC.view.init( _handleClick );
+    _gameLoop();
   };
 
   return {
     init: init,
   };
 
-})();
+})( JC );
 
 
